@@ -8,5 +8,5 @@ repo: https://github.com/yanir99/ckpool-umbrel/
 port: 3001
 path: /ckpool-solo
 category: Bitcoin
-icon: ./ckpool-solo-logo.png
+icon: https://github.com/yanir99/ckpool-umbrel/yanir99-ckpool-solo/ckpool-solo-logo.png
 dependencies: []
