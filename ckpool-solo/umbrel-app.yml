@@ -5,6 +5,6 @@ description: Solo mining pool server with configurable interface and logs viewer
 author: Your Name
 repository: https://github.com/yanir99/ckpool-umbrel/
 port: 3001
-path: /ckpool
+path: /ckpool-solo
 category: Bitcoin
 icon: ./ckpool-solo-logo.png
