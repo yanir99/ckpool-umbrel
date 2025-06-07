@@ -6,5 +6,5 @@ author: Your Name
 repository: https://github.com/yanir99/ckpool-umbrel
 port: 3001
 path: /ckpool
-category: Mining
-icon: ./icon.png
+category: Bitcoin
+icon: https://github.com/yanir99/ckpool-umbrel/blob/main/apps/ckpool-solo/ckpool-solo-logo.png
