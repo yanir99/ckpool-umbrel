@@ -1,10 +1,12 @@
 id: ckpool-solo
-version: 0.1
+version: "1.0.0"
 name: CKPool Solo
+tagline: BTC Solo Mining Pool
 description: Solo mining pool server with configurable interface and logs viewer.
-author: Your Name
-repository: https://github.com/yanir99/ckpool-umbrel/
+author: Yanir99
+repo: https://github.com/yanir99/ckpool-umbrel/
 port: 3001
 path: /ckpool-solo
 category: Bitcoin
 icon: ./ckpool-solo-logo.png
+dependencies: []
