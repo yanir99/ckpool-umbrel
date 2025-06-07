@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  ckpool:
+    image: pinkyswear/ckpool-solo
+    ports:
+      - "3333:3333"  # Stratum port
+    volumes:
+      - ${APP_DATA_DIR}/config:/ckpool/config
+      - ${APP_DATA_DIR}/logs:/ckpool/logs
+    restart: unless-stopped
+
+  web:
+    build: ./app/backend
+    ports:
+      - "3001:3000"  # Web UI port
+    volumes:
+      - ${APP_DATA_DIR}/config:/app/config
+      - ${APP_DATA_DIR}/logs:/app/logs
+    environment:
+      - BITCOIN_RPC_URL=http://umbrel:password@umbrel-bitcoind:8332
+    restart: unless-stopped
