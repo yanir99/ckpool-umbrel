@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-WORKDIR backend
+WORKDIR ./app/backend
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
