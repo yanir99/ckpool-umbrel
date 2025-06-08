@@ -22,7 +22,7 @@ services:
     container_name: ckpool-solo_ckpool_1
 
   web:
-    build: ./app/backend
+    build: .app/backend
     volumes:
       - ${APP_DATA_DIR}/config:/app/config
       - ${APP_DATA_DIR}/logs:/app/logs
