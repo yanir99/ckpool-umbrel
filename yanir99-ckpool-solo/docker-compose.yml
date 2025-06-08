@@ -22,7 +22,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: app/backend/Dockerfile
+      dockerfile: backend/Dockerfile
     volumes:
       - ${APP_DATA_DIR}/config:/app/config
       - ${APP_DATA_DIR}/logs:/app/logs
