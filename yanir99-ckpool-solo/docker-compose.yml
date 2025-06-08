@@ -21,11 +21,11 @@ services:
 
   web:
     image: yanir99/ckpool-backend:latest
-  volumes:
-    - ${APP_DATA_DIR}/config:/app/config
-    - ${APP_DATA_DIR}/logs:/app/logs
-  restart: on-failure
-  container_name: ckpool-solo_web_1
+    volumes:
+      - ${APP_DATA_DIR}/config:/app/config
+      - ${APP_DATA_DIR}/logs:/app/logs
+    restart: on-failure
+    container_name: ckpool-solo_web_1
 
   proxy:
     image: nginx:1.25.3
