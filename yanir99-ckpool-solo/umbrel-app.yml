@@ -6,7 +6,7 @@ icon: https://raw.githubusercontent.com/yanir99/ckpool-umbrel/main/yanir99-ckpoo
 category: Bitcoin
 version: "1.0.0"
 port: 5008
-description: >- 
+description: >-
   Solo mining pool server with configurable interface and logs viewer.
 developer: Yanir99
 submitter: yanir99
@@ -14,7 +14,6 @@ website:  https://github.com/yanir99/ckpool-umbrel
 submission: https://github.com/yanir99/ckpool-umbrel
 support: https://github.com/yanir99/ckpool-umbrel/
 repo: https://github.com/yanir99/ckpool-umbrel/
-dependencies: []
-path: ""
+path: "ckpool-solo"
 defaultUsername: ""
 defaultPassword: ""
