@@ -11,7 +11,12 @@ description: >-
 
 
   You can also add newlines!
-
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+releaseNotes: >-
+  Add what's new in the latest version of your app here.
 developer: Yanir99
 submitter: yanir99
 website:  https://github.com/yanir99/ckpool-umbrel
