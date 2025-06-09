@@ -4,14 +4,14 @@
   <title>CKPool Config</title>
   <script>
     async function loadConfig() {
-      const res = await fetch('/config/ckpool.conf');
+      const res = await fetch('/conf/ckpool.conf');
       const text = await res.text();
-      document.getElementById('config').value = text;
+      document.getElementById('conf').value = text;
     }
 
     async function saveConfig() {
-      const content = document.getElementById('config').value;
-      await fetch('/config/ckpool.conf', {
+      const content = document.getElementById('conf').value;
+      await fetch('/conf/ckpool.conf', {
         method: 'PUT',
         headers: { 'Content-Type': 'text/plain' },
         body: content

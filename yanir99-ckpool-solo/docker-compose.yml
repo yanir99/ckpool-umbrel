@@ -24,7 +24,7 @@ services:
       - FOLDER=/web
       - PORT=80
     volumes:
-      - ./ui:/web
+      - ${APP_DATA_DIR}/ui:/web
       - ${APP_DATA_DIR}/conf:/web/conf
       - ${APP_DATA_DIR}/logs:/web/logs
     restart: on-failure
