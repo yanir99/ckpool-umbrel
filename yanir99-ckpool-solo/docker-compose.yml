@@ -9,7 +9,7 @@ services:
       - "8008:80"
     container_name: ckpool-solo_app_proxy_1
   init:
-    image: curlimages/curl:8.7.1
+    image: curlimages/curl
     command: >
       sh -c "
         mkdir -p /conf /logs &&
