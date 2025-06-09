@@ -8,29 +8,9 @@ services:
     ports:
       - "8008:80"
     container_name: ckpool-solo_app_proxy_1
-  init:
-    image: curlimages/curl
-    command: >
-      sh -c "
-        mkdir -p /conf /logs &&
-        chmod -R 755 /conf &&
-        chown -R 1000:1000 /conf &&
-        chmod -R 755 /logs &&
-        chown -R 1000:1000 /logs &&
-        if [ ! -f /conf/ckpool.conf ]; then
-          echo 'Downloading default ckpool.conf...' &&
-          curl -fsSL https://raw.githubusercontent.com/yanir99/ckpool-umbrel/refs/heads/main/yanir99-ckpool-solo/ckpool.conf -o /conf/ckpool.conf;
-        fi
-      "
-    volumes:
-      - ${APP_DATA_DIR}/conf:/conf
-      - ${APP_DATA_DIR}/logs:/logs
-    restart: "no"
 
   ckpool:
     image: pinkyswear/ckpool-solo
-    depends_on:
-      - init
     restart: on-failure
     stop_grace_period: 30s
     ports:
