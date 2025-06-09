@@ -16,8 +16,8 @@ services:
     ports:
       - "5333:3333/tcp"
     volumes:
-      - ${APP_DATA_DIR}/config:/ckpool/config
-      - ${APP_DATA_DIR}/logs:/ckpool/logs
+      - ${APP_DATA_DIR}/config:/srv/ckpool/conf
+      - ${APP_DATA_DIR}/logs:/srv/ckpool/logs
     container_name: ckpool-solo_ckpool_1
 
   web:
