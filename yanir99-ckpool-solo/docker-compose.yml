@@ -1,6 +1,26 @@
 version: '3.7'
 
 services:
+  init:
+    image: alpine:latest
+    entrypoint: [ "sh", "-c" ]
+    command: >
+      "apk add --no-cache gettext &&
+      mkdir -p /conf /logs &&
+      if [ ! -f /conf/ckpool.conf ]; then
+        envsubst < /conf-template/ckpool.conf.tpl > /conf/ckpool.conf;
+      fi"
+    environment:
+      - APP_BITCOIN_NODE_IP
+      - APP_BITCOIN_RPC_USER
+      - APP_BITCOIN_RPC_PASS
+      - APP_BITCOIN_RPC_PORT
+    volumes:
+      - ${APP_DATA_DIR}/conf:/conf
+      - ${APP_DATA_DIR}/logs:/logs
+      - ./conf-template:/conf-template
+    restart: "no"
+
   app_proxy:
     environment:
       APP_HOST: ckpool-solo_web_1
@@ -9,6 +29,8 @@ services:
 
   ckpool:
     image: pinkyswear/ckpool-solo
+    depends_on:
+      - init
     restart: on-failure
     stop_grace_period: 30s
     ports:
