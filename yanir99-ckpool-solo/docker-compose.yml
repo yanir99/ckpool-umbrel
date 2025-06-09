@@ -6,7 +6,7 @@ services:
       APP_HOST: ckpool-solo_web_1
       APP_PORT: 80
     ports:
-      - "5008:80"
+      - "8008:80"
     container_name: ckpool-solo_app_proxy_1
 
   ckpool:
