@@ -19,13 +19,12 @@ services:
     container_name: ckpool-solo_ckpool_1
 
   web:
-    image: halverneus/static-file-server
-    environment:
-      - FOLDER=/web
-      - PORT=80
+    image: filebrowser/filebrowser
+    ports: []
     volumes:
-      - ${APP_DATA_DIR}/ui:/web
-      - ${APP_DATA_DIR}/conf:/web/conf
-      - ${APP_DATA_DIR}/logs:/web/logs
+      - ${APP_DATA_DIR}/conf:/srv/conf
+      - ${APP_DATA_DIR}/logs:/srv/logs
+    environment:
+      - FB_BASEURL=/web
     restart: on-failure
     container_name: ckpool-solo_web_1
