@@ -9,10 +9,7 @@ services:
   init:
     image: alpine
     entrypoint: /bin/sh
-    command: -c "
-      mkdir -p /conf &&
-      cat /conf/ckpool.conf.template | envsubst > /conf/ckpool.conf
-      "
+    command: '/bin/sh' '-c' 'cat /conf/ckpool.conf.template | envsubst > /conf/ckpool.conf'
     volumes:
       - ${APP_DATA_DIR}/conf:/conf
     environment:
