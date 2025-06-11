@@ -10,12 +10,8 @@ dependencies:
   - bitcoin
 description: >-
   Add your app's description here.
-
-
   You can also add newlines!
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
   Add what's new in the latest version of your app here.
