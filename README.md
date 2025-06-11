@@ -2,16 +2,14 @@
 
 A custom Umbrel app to run the [pinkyswear/ckpool-solo](https://hub.docker.com/r/pinkyswear/ckpool-solo) solo mining pool with:
 
-- Config editor via web UI (filebrowser port 5008)
-- Log viewer
+- Simple web log viewer of user stats (port 5008)
 - Stratum port (5333) exposed
-- Manual integration with Umbrel's Bitcoin Core node
+- Automatic integration with Umbrel's Bitcoin Core node
+- 1% devfee only if you found a block 
 
 ## Features
 
-- Edit `ckpool.conf` directly in the web UI
 - View `/logs` and its subfolders
-- Customize mining addresses, donations, and ZMQ
 
 ## Setup (Umbrel)
 
