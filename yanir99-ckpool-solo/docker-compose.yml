@@ -29,13 +29,24 @@ services:
       - ${APP_DATA_DIR}/logs:/srv/ckpool/logs
     container_name: ckpool-solo_ckpool_1
 
+  #web:
+  #  image: filebrowser/filebrowser
+  #  ports: []
+  #  volumes:
+  #    - ${APP_DATA_DIR}/conf:/srv/conf
+  #    - ${APP_DATA_DIR}/logs:/srv/logs
+  #  environment:
+  #    - FB_BASEURL=/web
+  #  restart: on-failure
+  #  container_name: ckpool-solo_web_1
+  
   web:
-    image: filebrowser/filebrowser
-    ports: []
-    volumes:
-      - ${APP_DATA_DIR}/conf:/srv/conf
-      - ${APP_DATA_DIR}/logs:/srv/logs
+    image: halverneus/static-file-server
     environment:
-      - FB_BASEURL=/web
+      - FOLDER=/web
+      - PORT=80
+    volumes:
+      - ${APP_DATA_DIR}/ui:/web
+      - ${APP_DATA_DIR}/logs:/web/logs
     restart: on-failure
     container_name: ckpool-solo_web_1

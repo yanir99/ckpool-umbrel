@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>CKPool Log Viewer</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    textarea { width: 100%; height: 400px; }
+  </style>
+  <script>
+    async function listLogs() {
+      const res = await fetch('/logs/');
+      const html = await res.text();
+      const matches = html.match(/href="([^"]+\.log)"/g);
+      const list = document.getElementById('log-list');
+      list.innerHTML = '';
+
+      if (!matches) {
+        list.innerHTML = '<li>No logs found.</li>';
+        return;
+      }
+
+      matches.forEach(href => {
+        const filename = href.match(/href="([^"]+)"/)[1];
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.textContent = filename;
+        a.href = '#';
+        a.onclick = async () => {
+          const logRes = await fetch(`/logs/${filename}`);
+          const logText = await logRes.text();
+          document.getElementById('log-viewer').value = logText;
+        };
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+    }
+
+    window.onload = listLogs;
+  </script>
+</head>
+<body>
+  <h1>CKPool Log Viewer</h1>
+  <ul id="log-list"></ul>
+  <h2>Log Content</h2>
+  <textarea id="log-viewer" readonly></textarea>
+</body>
+</html>
