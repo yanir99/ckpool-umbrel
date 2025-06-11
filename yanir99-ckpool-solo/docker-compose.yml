@@ -8,8 +8,7 @@ services:
     container_name: ckpool-solo_app_proxy_1
   init:
     image: alpine
-    entrypoint: /bin/sh
-    command: '/bin/sh' '-c' 'cat /conf/ckpool.conf.template | envsubst > /conf/ckpool.conf'
+    command: /bin/sh -c 'cat /conf/ckpool.conf.template | envsubst > /conf/ckpool.conf'
     volumes:
       - ${APP_DATA_DIR}/conf:/conf
     environment:
