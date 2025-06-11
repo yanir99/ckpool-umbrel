@@ -9,18 +9,21 @@ port: 5008
 dependencies:
   - bitcoin
 description: >-
-  Add your app's description here.
-  You can also add newlines!
+  Solo BTC mining pool based on CKPool
+  Uses stratum port 5333 point your miners there.
+  Simple text web interface to see status and statistics of workers
+
+  There is 1% donation fee - only if you hit a block, but it's opensource so feel free to tinker ;)
 gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
+  first release - work in progress
 developer: Yanir99
 submitter: yanir99
 website:  https://github.com/yanir99/ckpool-umbrel
 submission: https://github.com/yanir99/ckpool-umbrel
 support: https://github.com/yanir99/ckpool-umbrel/
 repo: https://github.com/yanir99/ckpool-umbrel/
-path: ""
+path: "users"
 defaultUsername: ""
 defaultPassword: ""
