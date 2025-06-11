@@ -6,17 +6,28 @@ services:
       APP_HOST: ckpool-solo_web_1
       APP_PORT: 80
     container_name: ckpool-solo_app_proxy_1
-
-  ckpool:
-    image: pinkyswear/ckpool-solo
-    restart: on-failure
-    stop_grace_period: 30s
-    ports:
-      - "5333:3333/tcp"
+  init:
+    image: alpine
+    entrypoint: /bin/sh
+    command: -c "
+      mkdir -p /conf &&
+      cat /conf/ckpool.conf.template | envsubst > /conf/ckpool.conf
+    "
+    volumes:
+      - ${APP_DATA_DIR}/conf:/conf
     environment:
       - APP_BITCOIN_NODE_IP=${APP_BITCOIN_NODE_IP}
       - APP_BITCOIN_RPC_USER=${APP_BITCOIN_RPC_USER}
       - APP_BITCOIN_RPC_PASS=${APP_BITCOIN_RPC_PASS}
+
+  ckpool:
+    image: pinkyswear/ckpool-solo
+    depends_on:
+      - init
+    restart: on-failure
+    stop_grace_period: 30s
+    ports:
+      - "5333:3333/tcp"
     volumes:
       - ${APP_DATA_DIR}/conf:/srv/ckpool/conf
       - ${APP_DATA_DIR}/logs:/srv/ckpool/logs
