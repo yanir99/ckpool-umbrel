@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ckpool-solo_web_1
+      APP_PORT: 80
+    container_name: ckpool-solo_app_proxy_1
+
+  ckpool:
+    image: pinkyswear/ckpool-solo
+    restart: on-failure
+    stop_grace_period: 30s
+    ports:
+      - "5333:3333/tcp"
+    volumes:
+      - ${APP_DATA_DIR}/conf:/srv/ckpool/conf
+      - ${APP_DATA_DIR}/logs:/srv/ckpool/logs
+    container_name: ckpool-solo_ckpool_1
+
+  web:
+    image: filebrowser/filebrowser
+    ports: []
+    volumes:
+      - ${APP_DATA_DIR}/conf:/srv/conf
+      - ${APP_DATA_DIR}/logs:/srv/logs
+    environment:
+      - FB_BASEURL=/web
+    restart: on-failure
+    container_name: ckpool-solo_web_1
