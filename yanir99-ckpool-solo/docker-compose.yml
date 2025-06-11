@@ -12,7 +12,7 @@ services:
     command: -c "
       mkdir -p /conf &&
       cat /conf/ckpool.conf.template | envsubst > /conf/ckpool.conf
-    "
+      "
     volumes:
       - ${APP_DATA_DIR}/conf:/conf
     environment:
@@ -22,8 +22,6 @@ services:
 
   ckpool:
     image: pinkyswear/ckpool-solo
-    depends_on:
-      - init
     restart: on-failure
     stop_grace_period: 30s
     ports:
