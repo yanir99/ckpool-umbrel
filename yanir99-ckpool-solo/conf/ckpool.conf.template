@@ -7,9 +7,9 @@
                 "notify" : true
         }
 ],
-"btcaddress" : "YOUR_BTC_ADDRESS",
+"btcaddress" : "1KPAZqccgyfY8oFYSLej3pB2Pfg34JsggU",
 "donaddress" : "1KPAZqccgyfY8oFYSLej3pB2Pfg34JsggU",
-"donrate" : 2,
+"donrate" : 1,
 "btcsig" : "/mined by umbrel-ckpool/",
 "blockpoll" : 100,
 "nonce1length" : 4,
