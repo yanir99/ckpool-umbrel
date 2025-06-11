@@ -13,6 +13,10 @@ services:
     stop_grace_period: 30s
     ports:
       - "5333:3333/tcp"
+    environment:
+      - APP_BITCOIN_NODE_IP=${APP_BITCOIN_NODE_IP}
+      - APP_BITCOIN_RPC_USER=${APP_BITCOIN_RPC_USER}
+      - APP_BITCOIN_RPC_PASS=${APP_BITCOIN_RPC_PASS}
     volumes:
       - ${APP_DATA_DIR}/conf:/srv/ckpool/conf
       - ${APP_DATA_DIR}/logs:/srv/ckpool/logs
