@@ -24,6 +24,6 @@ website:  https://github.com/yanir99/ckpool-umbrel
 submission: https://github.com/yanir99/ckpool-umbrel
 support: https://github.com/yanir99/ckpool-umbrel/
 repo: https://github.com/yanir99/ckpool-umbrel/
-path: "users"
+path: ""
 defaultUsername: ""
 defaultPassword: ""
