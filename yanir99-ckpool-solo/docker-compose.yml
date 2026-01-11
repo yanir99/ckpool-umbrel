@@ -18,7 +18,7 @@ services:
       - APP_BITCOIN_RPC_PASS=${APP_BITCOIN_RPC_PASS}
 
   ckpool:
-    image: magicdude4eva/cksolo
+    image: 	bboerst/ckpool-solo:master-testnet4-v1
     entrypoint: /bin/sh -c 'while [ ! -f /srv/ckpool/conf/.ready ]; do echo "Waiting for ckpool.conf to be ready..."; sleep 1; done; rm -f /tmp/ckpool/main.pid && rm -f /srv/ckpool/conf/.ready && ./bin/ckpool -B -c ./conf/ckpool.conf'
     depends_on:
       - init
