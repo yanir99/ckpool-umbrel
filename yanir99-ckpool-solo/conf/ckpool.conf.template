@@ -15,12 +15,12 @@
 "nonce1length" : 4,
 "nonce2length" : 8,
 "update_interval" : 30,
-"version_mask" : "1fffe000",
+"version_mask" : "00000000",
 "serverurl" : [
         "0.0.0.0:3333"
 ],
-"mindiff" : 1,
-"startdiff" : 1000,
+"mindiff" : 2500,
+"startdiff" : 10000,
 "maxdiff" : 0,
 "zmqblock" : "tcp://${APP_BITCOIN_NODE_IP}:28332",
 "logdir" : "logs"
